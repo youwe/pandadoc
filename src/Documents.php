@@ -35,7 +35,7 @@ class Documents extends PandaDoc
    */
     public function list(array $filters = []): \stdClass
     {
-        return $this->request('GET', self::RESOURCE, $filters);
+        return $this->request('GET', self::RESOURCE.'?'.http_build_query($filters), $filters);
     }
 
   /**
